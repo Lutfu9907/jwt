@@ -17,7 +17,7 @@ import com.lutfudolay.jwt.JwtAuthenticationFilter;
 
 public class SecurityConfig {//Uygulamanın hangi endpoint'lerine kim ulaşabilir, nasıl giriş yapılır, token nasıl kontrol edilir gibi güvenlik politikalarını burada tanımlarız.
 
-	public static final  String AUTHENTICATE = "/authenticate"; //Public erişime açık olacak endpoint’leri sabit olarak tanımlıyorsun.
+	public static final  String AUTHENTICATE = "/authenticate"; //Public erişime açık olacak endpoint’leri sabit olarak tanımlıyorum.
 	public static final  String REGISTER = "/register";
 	
 	@Autowired
