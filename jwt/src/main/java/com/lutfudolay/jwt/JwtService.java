@@ -22,12 +22,11 @@ public class JwtService {
 
 	public String generateToken(UserDetails userDetails) {  //"Bir kullanıcı sisteme login olduğunda, bu kullanıcı için bir JWT token üret."
 		
-		Map<String, String> claimsMap = new HashMap<>();
-		claimsMap.put("role","ADMIN");
+		//Map<String, String> claimsMap = new HashMap<>();
+		//claimsMap.put("role","ADMIN");
 		
 		return Jwts.builder() // Jwts sınıfının builder metodu kullanıldı
 		.setSubject(userDetails.getUsername()) // Bu token kime ait? Genelde kullanıcı adı (username) konur.
-		.setClaims(claimsMap) // Token’a ekstra bilgi koymak (örneğin kullanıcı rolü gibi)
 		.setIssuedAt(new Date()) // Ne zaman üretildi?
 		.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 2)) // Ne zaman geçerliliği biter? (şu an + 2 saat)
 		.signWith(getKey(), SignatureAlgorithm.HS256) //Token’ı imzala (Key ve algoritma ile)
