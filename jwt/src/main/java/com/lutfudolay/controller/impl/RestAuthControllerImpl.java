@@ -14,6 +14,7 @@ import com.lutfudolay.service.IRefreshTokenService;
 
 import jakarta.validation.Valid;
 
+@RestController
 public class RestAuthControllerImpl implements IRestAuthController {
 
 	@Autowired
